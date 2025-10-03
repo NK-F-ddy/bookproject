@@ -1,24 +1,20 @@
 databases:
-
   - name: mysitedb
     plan: free
-    databaseName: NKdatabase
-    user: NKFddy
+    databaseName: nkdatabase
+    user: nk_f_ddy
 
 services:
-
   - type: web
     plan: free
-    name: NKFddy
+    name: nk_f_ddy
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
-
       - key: DATABASE_URL
         fromDatabase:
-        name: mysitedb
-        property: connectionString
-
+          name: mysitedb
+          property: connectionString
       - key: WEB_CONCURRENCY
         value: 4
