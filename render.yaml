@@ -3,13 +3,13 @@ databases:
   - name: mysitedb
     plan: free
     databaseName: NKdatabase
-    user: NK_F_ddy
+    user: NKFddy
 
 services:
 
   - type: web
     plan: free
-    name: NK_F_ddy
+    name: NKFddy
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UvicornWorker"
