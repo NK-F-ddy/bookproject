@@ -12,9 +12,9 @@ services:
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
-      - key: DATABASE_URL
+      - key: DATABASEURL
 	fromDatabase:
 	  name: mysitedb
 	  property: connectionString
-      - key: WEB_CONCURRENCY
+      - key: WEBCONCURRENCY
 	  value: 4
