@@ -88,11 +88,11 @@ DATABASES = {
 if not DEBUG:
     DATABASES = {
         'default': dj_database_url.config(
-        # Replace this value with your local database's connection string
-        default='postgresql://postgres:postgres@localhost:5432/bookproject',
-        conn_max_age=600
-    )
-}
+            # 💡 以前あった default='...' の行を削除しました。
+            # これで Render の環境変数 DATABASE_URL が自動で使われます。
+            conn_max_age=600
+        )
+    }
 
 ALLOWED_HOSTS = ['*']
 
