@@ -2,8 +2,8 @@ databases:
   - name: mysitedb
     plan: free
     databaseName: NKdatabase
-    user: NK_F_ddy
-	  
+    user: NKFddy
+
 services:
   - type: web
     plan: free
